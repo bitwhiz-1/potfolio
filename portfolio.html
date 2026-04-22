@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urooz Fatima — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;600&family=Raleway:wght@200;300;400;500&family=Rajdhani:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+  <!-- Star Canvas -->
+  <canvas id="stars"></canvas>
+
+  <!-- Nebula Orbs -->
+  <div class="nebula n1"></div>
+  <div class="nebula n2"></div>
+  <div class="nebula n3"></div>
+  <div class="nebula n4"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-logo">✦ UF ✦</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="about">
+    <div class="hero-inner">
+
+      <div class="hero-text">
+        <p class="eyebrow"><span class="star-sym">✦</span> Software Quality Assurance <span class="star-sym">✦</span></p>
+        <h1 class="name">Urooz<br><span class="name-italic">Fatima</span></h1>
+        <div class="divider-line">
+          <span class="divider-gem">◈</span>
+        </div>
+        <p class="bio">
+          An aspiring SQA Engineer with a passion for software reliability, performance, and usability. Bridging development and quality — I test not just for bugs, but for excellence.
+        </p>
+        <div class="cta-row">
+          <a href="#connect" class="btn-glow">Connect With Me</a>
+          <a href="#skills" class="btn-outline">Explore Skills</a>
+        </div>
+      </div>
+
+      <div class="photo-col">
+        <div class="orbit-ring ring-outer"></div>
+        <div class="orbit-ring ring-mid"></div>
+        <div class="photo-glow-wrap">
+          <div class="photo-border-spin"></div>
+          <img src="urooz linkedin photo.jpg" alt="Urooz Fatima" class="profile-photo">
+        </div>
+        <div class="orbit-dot dot-1"></div>
+        <div class="orbit-dot dot-2"></div>
+        <div class="orbit-dot dot-3"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section" id="skills">
+    <div class="section-label">
+      <span class="section-line"></span>
+      <span class="section-title-text">✦ Expertise ✦</span>
+      <span class="section-line"></span>
+    </div>
+    <div class="cards-grid">
+      <div class="card reveal">
+        <div class="card-glyph">◉</div>
+        <h3>Quality Assurance</h3>
+        <p>Manual testing, defect tracking, and structured QA processes ensuring software meets the highest standards.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-glyph">◈</div>
+        <h3>SDLC Methodology</h3>
+        <p>Deep knowledge of software development lifecycles, testing models, and agile workflows.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-glyph">◇</div>
+        <h3>Frontend Dev</h3>
+        <p>Crafting clean, responsive interfaces with HTML & CSS — where aesthetics meet functionality.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-glyph">✦</div>
+        <h3>C++ Programming</h3>
+        <p>Strong programming foundation enabling deeper system analysis and more effective testing strategies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect Section -->
+  <section class="section" id="connect">
+    <div class="section-label">
+      <span class="section-line"></span>
+      <span class="section-title-text">✦ Find Me ✦</span>
+      <span class="section-line"></span>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/bitwhiz-1" target="_blank" class="social-link reveal">
+        <div class="social-img-ring">
+          <img src="github logo.png" alt="GitHub">
+        </div>
+        <div class="social-text">
+          <span class="social-name">GitHub</span>
+          <span class="social-handle">@bitwhiz-1</span>
+        </div>
+        <span class="social-arr">↗</span>
+      </a>
+      <a href="https://leetcode.com/u/uroozulous/" target="_blank" class="social-link reveal">
+        <div class="social-img-ring">
+          <img src="leetcode.png" alt="LeetCode">
+        </div>
+        <div class="social-text">
+          <span class="social-name">LeetCode</span>
+          <span class="social-handle">@uroozulous</span>
+        </div>
+        <span class="social-arr">↗</span>
+      </a>
+      <a href="https://www.linkedin.com/in/urooz-fatima/" target="_blank" class="social-link reveal">
+        <div class="social-img-ring">
+          <img src="linkedin.png" alt="LinkedIn">
+        </div>
+        <div class="social-text">
+          <span class="social-name">LinkedIn</span>
+          <span class="social-handle">Urooz Fatima</span>
+        </div>
+        <span class="social-arr">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span class="star-sym">✦</span> Urooz Fatima &nbsp;·&nbsp; Built among the stars &nbsp; <span class="star-sym">✦</span>
+  </footer>
+
+  <script>
+    /* ── Starfield ── */
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    let W, H, stars = [];
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = document.body.scrollHeight;
+    }
+
+    function makeStar() {
+      return {
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 1.4 + 0.2,
+        o: Math.random(),
+        speed: Math.random() * 0.4 + 0.1,
+        dir: Math.random() > 0.5 ? 1 : -1
+      };
+    }
+
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < 280; i++) stars.push(makeStar());
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, W, H);
+      stars.forEach(s => {
+        s.o += s.speed * 0.01 * s.dir;
+        if (s.o > 1 || s.o < 0) s.dir *= -1;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(200, 180, 255, ${s.o})`;
+        ctx.fill();
+      });
+      requestAnimationFrame(drawStars);
+    }
+
+    resize();
+    initStars();
+    drawStars();
+    window.addEventListener('resize', () => { resize(); initStars(); });
+
+    /* ── Scroll reveal ── */
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    /* ── Stagger cards ── */
+    document.querySelectorAll('.card').forEach((c, i) => {
+      c.style.transitionDelay = `${i * 0.12}s`;
+    });
+    document.querySelectorAll('.social-link').forEach((c, i) => {
+      c.style.transitionDelay = `${i * 0.1}s`;
+    });
+  </script>
+</body>
+</html>
